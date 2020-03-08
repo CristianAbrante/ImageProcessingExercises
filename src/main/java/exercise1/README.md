@@ -17,3 +17,11 @@ should print `!=`.
 The execution is:
  
 > exercise-1b image-1.pgm image-2.pgm
+
+### Exercise 1 d
+
+Implement a program that computes the infimun and supremum of two images.
+
+The execution is:
+
+> exercise-1d sup/inf input-image-1.pgm input-image-2.pgm output-image.pgm
