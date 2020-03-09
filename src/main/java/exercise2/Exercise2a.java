@@ -1,12 +1,11 @@
-package exercise1;
+package exercise2;
 
-import boofcv.io.image.UtilImageIO;
 import boofcv.struct.image.GrayU8;
 import utils.Utils;
 
 import java.io.IOException;
 
-public class Exercise1a {
+public class Exercise2a {
     public static void main(String[] args) {
         if (args.length != 3) {
             System.err.println("Error: program expects three arguments");

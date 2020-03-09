@@ -16,6 +16,15 @@ public class Filter {
         return resultImage;
     }
 
+    public static GrayU8 applyFilterUsingElementSize(GrayU8 image, int size, FilterOperation operation) {
+        StructuringElement element = new StructuringElement(1);
+        GrayU8 outputImage = image;
+        for (int i = 0; i < size; i++) {
+            outputImage = applyFilter(outputImage, element, operation);
+        }
+        return outputImage;
+    }
+
     private static ArrayList<Integer> computeNeighbours(GrayU8 image, int x, int y, StructuringElement element) {
         ArrayList<Integer> neighbours = new ArrayList<Integer>();
 

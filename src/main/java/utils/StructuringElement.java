@@ -1,19 +1,5 @@
 package utils;
 
-class StructuringSize {
-    public int top;
-    public int bottom;
-    public int left;
-    public int right;
-
-    public StructuringSize(int top, int bottom, int left, int right) {
-        this.top = top;
-        this.bottom = bottom;
-        this.left = left;
-        this.right = right;
-    }
-}
-
 public class StructuringElement {
     int width;
     int height;

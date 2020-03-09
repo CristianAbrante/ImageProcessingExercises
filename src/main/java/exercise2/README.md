@@ -24,4 +24,5 @@ Implement a program that computes the infimun and supremum of two images.
 
 The execution is:
 
-> exercise-1d sup/inf input-image-1.pgm input-image-2.pgm output-image.pgm
+> exercise-1d-sup input-image-1.pgm input-image-2.pgm output-image.pgm
+> exercise-1d-inf input-image-1.pgm input-image-2.pgm output-image.pgm
