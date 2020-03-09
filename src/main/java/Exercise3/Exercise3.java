@@ -1,10 +1,8 @@
-package exercise2;
+package Exercise3;
 
 import boofcv.struct.image.GrayU8;
-import utils.Filter;
-import utils.FilterOperation;
-import utils.StructuringElement;
-import utils.Utils;
+import utils.*;
+
 import java.io.IOException;
 
 public class Exercise3 {
@@ -14,16 +12,17 @@ public class Exercise3 {
             return;
         }
         try {
-            FilterOperation operation = FilterOperation.of(args[0]);
+            MorphologicalOperation operation = MorphologicalOperation.of(args[0]);
             int size = Integer.parseInt(args[1]);
             StructuringElement element = new StructuringElement(size);
 
             GrayU8 inputImage = Utils.readPGMImage(args[2]);
-            GrayU8 resultImage = Filter.applyFilter(inputImage, element, operation);
+            GrayU8 resultImage = MorphologicalOperator.applyOperation(inputImage, operation, element);
 
             Utils.saveImage(resultImage, args[3]);
         }
-        catch (IOException e) {
+        catch (
+                IOException e) {
             System.err.println("Error reading the images.");
             e.printStackTrace();
         }
