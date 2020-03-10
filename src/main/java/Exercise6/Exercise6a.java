@@ -1,4 +1,4 @@
-package Exercise4;
+package Exercise6;
 
 import boofcv.struct.image.GrayU8;
 import utils.MorphologicalOperation;
@@ -8,7 +8,7 @@ import utils.Utils;
 
 import java.io.IOException;
 
-public class Exercise4b {
+public class Exercise6a {
     public static void main(String[] args) {
         if (args.length != 3) {
             System.err.println("Error: program expects three arguments");
@@ -19,8 +19,7 @@ public class Exercise4b {
             StructuringElement element = new StructuringElement(size);
 
             GrayU8 inputImage = Utils.readPGMImage(args[1]);
-            MorphologicalOperation.CLOSING.applyOperation(inputImage, element);
-            GrayU8 resultImage = MorphologicalOperator.applyOperation(inputImage, MorphologicalOperation.CLOSING, element);
+            GrayU8 resultImage = MorphologicalOperator.applyOperation(inputImage, MorphologicalOperation.CLOSING_OPENING, element);
             Utils.saveImage(resultImage, args[2]);
         }
         catch (IOException e) {
