@@ -3,6 +3,7 @@ import exercise2.Exercise2b;
 import exercise2.Exercise2d;
 import exercise3.Exercise3;
 import exercise4.Exercise4;
+import exercise6.Exercise6;
 
 interface ExerciseCallback {
   void executeExercise(String[] args);
@@ -13,7 +14,8 @@ enum Exercise {
   EX2B(Exercise2b::main),
   EX2D(Exercise2d::main),
   EX3(Exercise3::main),
-  EX4(Exercise4::main);
+  EX4(Exercise4::main),
+  EX6(Exercise6::main);
 
   ExerciseCallback callback;
 
