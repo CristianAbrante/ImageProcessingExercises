@@ -1,6 +1,7 @@
 import exercise2.Exercise2a;
 import exercise2.Exercise2b;
 import exercise2.Exercise2d;
+import exercise3.Exercise3;
 
 interface ExerciseCallback {
   void executeExercise(String[] args);
@@ -20,6 +21,11 @@ enum Exercise {
   EX2D(new ExerciseCallback() {
     public void executeExercise(String[] args) {
       Exercise2d.main(args);
+    }
+  }),
+  EX3(new ExerciseCallback() {
+    public void executeExercise(String[] args) {
+      Exercise3.main(args);
     }
   });
 
