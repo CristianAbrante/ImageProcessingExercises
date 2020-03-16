@@ -41,7 +41,7 @@ The project is divided in the following folders:
 * `src/`: Folder containing the `Java` source code of the exercises.
 * `test-images/`: Images for testing each exercise.
 
-### Execute exercise
+### Execute exercises
 
 In this section is explained how to execute each exercise:
 
@@ -147,4 +147,4 @@ Check `exercise_09.pdf` file.
 
 ### Author
 
-- **Cristian Abrante Dorta** - [CristianAbrante](https://github.com/CristianAbrante)
+- **Cristian M. Abrante Dorta** - [CristianAbrante](https://github.com/CristianAbrante)
