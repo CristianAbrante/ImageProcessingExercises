@@ -1,3 +1,3 @@
 # !/bin/bash
 
-assignment/utils.sh ex2dinf "$@"
+assignment/utils.sh ex2d infimum "$@"

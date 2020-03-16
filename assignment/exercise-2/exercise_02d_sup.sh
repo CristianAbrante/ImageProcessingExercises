@@ -1,3 +1,3 @@
 # !/bin/bash
 
-assignment/utils.sh ex2dsup "$@"
+assignment/utils.sh ex2d supremum "$@"

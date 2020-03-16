@@ -1,7 +1,6 @@
 import exercise2.Exercise2a;
 import exercise2.Exercise2b;
-import exercise2.Exercise2dInf;
-import exercise2.Exercise2dSup;
+import exercise2.Exercise2d;
 
 interface ExerciseCallback {
   void executeExercise(String[] args);
@@ -18,14 +17,9 @@ enum Exercise {
       Exercise2b.main(args);
     }
   }),
-  EX2DINF(new ExerciseCallback() {
+  EX2D(new ExerciseCallback() {
     public void executeExercise(String[] args) {
-      Exercise2dInf.main(args);
-    }
-  }),
-  EX2DSUP(new ExerciseCallback() {
-    public void executeExercise(String[] args) {
-      Exercise2dSup.main(args);
+      Exercise2d.main(args);
     }
   });
 
