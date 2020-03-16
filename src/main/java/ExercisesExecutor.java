@@ -2,32 +2,18 @@ import exercise2.Exercise2a;
 import exercise2.Exercise2b;
 import exercise2.Exercise2d;
 import exercise3.Exercise3;
+import exercise4.Exercise4;
 
 interface ExerciseCallback {
   void executeExercise(String[] args);
 }
 
 enum Exercise {
-  EX2A(new ExerciseCallback() {
-    public void executeExercise(String[] args) {
-      Exercise2a.main(args);
-    }
-  }),
-  EX2B(new ExerciseCallback() {
-    public void executeExercise(String[] args) {
-      Exercise2b.main(args);
-    }
-  }),
-  EX2D(new ExerciseCallback() {
-    public void executeExercise(String[] args) {
-      Exercise2d.main(args);
-    }
-  }),
-  EX3(new ExerciseCallback() {
-    public void executeExercise(String[] args) {
-      Exercise3.main(args);
-    }
-  });
+  EX2A(Exercise2a::main),
+  EX2B(Exercise2b::main),
+  EX2D(Exercise2d::main),
+  EX3(Exercise3::main),
+  EX4(Exercise4::main);
 
   ExerciseCallback callback;
 
