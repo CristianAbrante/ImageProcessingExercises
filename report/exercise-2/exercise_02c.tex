@@ -1,0 +1,132 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{Exercise 02 C}
+\author{Cristian Manuel Abrante Dorta}
+\date{March 2020}
+
+\begin{document}
+
+\maketitle
+
+We consider an square image $I$ whose size is $\mathcal{N}x\mathcal{N}$, and three types of structuring elements. \\
+
+First type is structuring element $\mathcal{B}$, which is a 2-dimensional structuring element of size $\mathcal{M}x\mathcal{M}$.
+
+\begin{equation}
+    \mathcal{B} = 
+        \begin{pmatrix}
+            b_{1,1} & b_{1,2} & \cdots & b_{1,m} \\
+            b_{2,1} & b_{2,2} & \cdots & b_{2,m} \\
+            \vdots  & \vdots  & \ddots & \vdots  \\
+            b_{m,1} & b_{m,2} & \cdots & b_{m,m} 
+        \end{pmatrix}
+\end{equation}
+
+Second type is $\mathcal{C}$ which is a 1 dimensional horizontal structuring element:
+
+\begin{equation}
+    \mathcal{C} = 
+        \begin{pmatrix}
+            c_{1} & b_{2} & \cdots & c_{m} \\
+        \end{pmatrix}
+\end{equation}
+
+Third type is a $\mathcal{D}$ wich is a 1 dimensional vertical structuring element:
+
+\begin{equation}
+    \mathcal{D} = 
+        \begin{pmatrix}
+            d_{1} \\
+            d_{2} \\ 
+            \vdots\\
+            c_{m} \\
+        \end{pmatrix}
+\end{equation}
+
+We can assume those two properties of the elements:
+
+\begin{equation}
+    \mathcal{B} = \delta_{\mathcal{C}}(\mathcal{D}) = \delta_{\mathcal{D}}(\mathcal{C})
+\end{equation}
+
+Calculate the number of $max$ operations that must be computed in order to process a $\mathcal{N} x \mathcal{N}$ input image using the following alternatives:
+
+\begin{itemize}
+    \item First alternative: $\delta_{\mathcal{B}}(I)$
+    \item Second alternative: $\delta_{\mathcal{C}}\delta_{\mathcal{D}}(I)$
+\end{itemize}
+
+\section{Considerations}
+
+We are going to compute the number of elementary $max$ operations that we have to do in order to compute the max of a list of elements. \\
+
+Considering only two elements:
+
+\begin{equation}
+    max(x_1, x_2) \rightarrow 1\, operation
+\end{equation}
+
+Considering three elements:
+
+\begin{equation}
+    max(x_1, x_2, x_3) = max(x_1, max(x_2, x_3)) \rightarrow 2\,operations
+\end{equation}
+
+Considering four elements:
+
+\begin{equation}
+    max(x_1, x_2, x_3, x_4) = max(x_1, max(x_2, max(x_3, x_4))) \rightarrow 3\,operations
+\end{equation}
+
+Finally if we consider $n$ elements:
+
+\begin{equation}
+    max(x_1, x_2, \cdots, x_n) = max(x_1, max(x_2, \cdots ,max(x_{n-1}, x_n))) \rightarrow n-1\,operations
+\end{equation}
+
+\section{First alternative: $\delta_{\mathcal{B}}(I)$}
+
+For computing the operations of the structuring element, whose size is $\mathcal{M}x\mathcal{M}$, we have $M^2$ elements. Following the reasoning of previous equation:
+
+\begin{equation}
+    \mathcal{M}x\mathcal{M} \rightarrow \mathcal{M}^2-1\:operations
+\end{equation}
+
+As the image have $\mathcal{N}x\mathcal{N}$ elements, or $\mathcal{N}^2$, we can compute the total number of operations ($NumOp_1$):
+
+\begin{equation}
+    NumOp_1 = \mathcal{N}^2 (\mathcal{M}^2 - 1)
+\end{equation}
+
+\section{Second alternative: $\delta_{\mathcal{C}}\delta_{\mathcal{D}}(I)$}
+
+For each structuring element as their size is $\mathcal{M}$, we can say that the number of elementary operations is $M-1$, following the preovious reasoning.\\
+
+As the image have $\mathcal{N}x\mathcal{N}$ elements, or $\mathcal{N}^2$, we can compute the total number of operations, with only one structuring element:
+
+\begin{equation}
+    \mathcal{N}^2 (\mathcal{M} - 1)
+\end{equation}
+
+But, we have two elements, so we have to multiply the number of operations by two:
+
+\begin{equation}
+    NumOp_2 = 2\mathcal{N}^2 (\mathcal{M} - 1)
+\end{equation}
+
+\section{Conclusion}
+
+The number of operations for each alternative is:
+
+\begin{equation}
+\begin{split}
+    NumOp_1 = \mathcal{N}^2(\mathcal{M}^2 - 1) \\
+    NumOp_2 = 2\mathcal{N}^2(\mathcal{M} - 1)
+\end{split}
+\end{equation}
+
+We can confirm that the number of operations in the second alternative is lower than the first one.
+
+\end{document}
