@@ -8,21 +8,20 @@ import utils.Utils;
 import java.io.IOException;
 
 public class Exercise2dSup {
-    public static void main(String[] args) {
-        if (args.length != 3) {
-            System.err.println("Error: program expects three arguments");
-            return;
-        }
-        try {
-            GrayU8 firstImage = Utils.readPGMImage(args[0]);
-            GrayU8 secondImage = Utils.readPGMImage(args[1]);
-            GrayU8 outputImage = LatticeOperator.applyOperation(firstImage,secondImage, LatticeOperation.SUPREMUM);
-
-            Utils.saveImage(outputImage, args[2]);
-        }
-        catch (IOException e) {
-            System.err.println("Error reading the images.");
-            e.printStackTrace();
-        }
+  public static void main(String[] args) {
+    if (args.length != 3) {
+      System.err.println("Error: program expects three arguments");
+      return;
     }
+    try {
+      GrayU8 firstImage = Utils.readPGMImage(args[0]);
+      GrayU8 secondImage = Utils.readPGMImage(args[1]);
+      GrayU8 outputImage = LatticeOperator.applyOperation(firstImage, secondImage, LatticeOperation.SUPREMUM);
+
+      Utils.saveImage(outputImage, args[2]);
+    } catch (IOException e) {
+      System.err.println("Error reading the images.");
+      e.printStackTrace();
+    }
+  }
 }
