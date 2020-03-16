@@ -5,7 +5,7 @@
 ## Project ##
 
 # Output for program images
-src/out/
+out/
 
 ### Intellij+all ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm

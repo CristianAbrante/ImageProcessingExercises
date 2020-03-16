@@ -3,17 +3,66 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>cristian.abrante.me</groupId>
     <artifactId>ImageProcessingExercises</artifactId>
+
+    <!-- Project packaging -->
+    <packaging>jar</packaging>
+
     <version>1.0-SNAPSHOT</version>
+    <name>ImageProcessingExercises</name>
+
+    <properties>
+        <boofcv.version>0.27</boofcv.version>
+    </properties>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.boofcv/boofcv-all -->
         <dependency>
             <groupId>org.boofcv</groupId>
             <artifactId>boofcv-all</artifactId>
-            <version>0.27</version>
+            <version>${boofcv.version}</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <finalName>ImageProcessingExercises0x</finalName>
+        <plugins>
+
+            <!-- Make this jar executable -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>ExercisesExecutor</mainClass>
+                            <classpathPrefix>dependency-jars/</classpathPrefix>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <!-- Copy project dependency -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.5.1</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <includeScope>runtime</includeScope>
+                            <outputDirectory>${project.build.directory}/dependency-jars/</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
