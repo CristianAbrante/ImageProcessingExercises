@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{Exercise 09}
+\author{Cristian Manuel Abrante Dorta}
+\date{March 2020}
+
+\begin{document}
+
+\maketitle
+
+Proof the idempotence of the opening ($\gamma$) closing ($\varphi$) operation.\\
+
+In a formal way, it can be expressed as:
+
+\begin{equation}
+    (\varphi \gamma)(\varphi \gamma) (I) = \varphi \gamma(I) 
+\end{equation}
+
+It is equivalent to prove the following:
+
+\begin{equation}
+    (\varphi \gamma)(\varphi \gamma) (I) \leq \varphi \gamma(I) \land 
+    (\varphi \gamma)(\varphi \gamma) (I) \geq \varphi \gamma(I)
+    \rightarrow (\varphi \gamma)(\varphi \gamma) (I) = \varphi \gamma(I) 
+\end{equation}
+
+\section{Proof: $(\varphi \gamma)(\varphi \gamma) (I) \leq \varphi \gamma(I)$}
+
+First we are going to construct a proof for $(\varphi \gamma)(\varphi \gamma) (I) \leq \varphi \gamma(I)$. For doing this, as the closing is an idempotent operation we can consider that:
+
+\begin{equation}
+\begin{split}
+    \varphi \varphi \varphi \gamma(I) = \varphi \gamma(I)
+\end{split}
+\end{equation}
+
+As the opening is antiextensive and closing is extensive, we can affirm that the closing is greater or equal than the opening ($\varphi \geq \gamma$). Substituting the second closing operation by an opening we can confirm that:
+
+\begin{equation}
+    \varphi \gamma \varphi \gamma(I) \leq \varphi \gamma(I)
+\end{equation}
+
+\section{Proof: $(\varphi \gamma)(\varphi \gamma) (I) \geq \varphi \gamma(I)$}
+
+Second, we are going to prove that $(\varphi \gamma)(\varphi \gamma) (I) \geq \varphi \gamma(I)$. For doing this, as the opening is idempotent we can assume that:
+
+\begin{equation}
+\begin{split}
+    \varphi \gamma \gamma \gamma(I) = \varphi \gamma(I) \\
+\end{split}
+\end{equation}
+
+As the opening is antiextensive, and closing is extensive. We can affirm that the opening is greater or equal than the opening ($\varphi \geq \gamma$). Substituting the second opening operation by a closing we can affirm that:
+
+\begin{equation}
+     \varphi \gamma \varphi \gamma(I) \geq \varphi \gamma(I) \\
+\end{equation}
+
+\section{Conclusions}
+
+Finally, as the two parts of the and ($\land$) are proved, we have proved the equality of the both assumptions. So we can affirm that the opening-closing operation is idempotent.
+
+\end{document}
