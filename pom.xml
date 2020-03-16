@@ -13,6 +13,8 @@
     <name>ImageProcessingExercises</name>
 
     <properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
         <boofcv.version>0.27</boofcv.version>
     </properties>
 
@@ -28,7 +30,6 @@
     <build>
         <finalName>ImageProcessingExercises0x</finalName>
         <plugins>
-
             <!-- Make this jar executable -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
