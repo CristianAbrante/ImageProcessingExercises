@@ -1,14 +1,16 @@
 package segmentation;
 
-import boofcv.alg.misc.PixelMath;
-import boofcv.core.image.ConvertImage;
-import boofcv.struct.image.GrayU16;
 import boofcv.struct.image.GrayU8;
-import utils.Filter;
-import utils.FilterOperation;
 import utils.Utils;
+import utils.segmentation.Region;
+import utils.segmentation.Segmentation;
+import utils.structuring.StructuringElement;
+import utils.structuring.StructuringElement4;
+import utils.structuring.StructuringElement8;
 
+import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Segmentation1B {
   /**
@@ -28,22 +30,18 @@ public class Segmentation1B {
       return;
     }
     try {
-      FilterOperation operation = FilterOperation.of(args[0]);
-      System.out.println(args[1]);
+      int connectivity = Integer.parseInt(args[0]);
+      if (connectivity != 4 && connectivity != 8) {
+        throw new IllegalArgumentException("Connectivity should be 4 or 8");
+      }
       int size = Integer.parseInt(args[1]);
+      StructuringElement element = connectivity == 4 ? new StructuringElement4(size) : new StructuringElement8(size);
       GrayU8 inputImage = Utils.readImage(args[2]);
 
-      GrayU8 filteredImage = Filter.applyFilterUsingElementSize(inputImage, size, operation);
+      ArrayList<Region> regions = Segmentation.grassFireSegmentation(inputImage, element);
+      BufferedImage outputImage = Segmentation.getImageWithRegions(inputImage, regions);
 
-      GrayU16 outputImage16B = new GrayU16(filteredImage.getWidth(), filteredImage.getHeight());
-      GrayU8 outputImage8B = new GrayU8(filteredImage.getWidth(), filteredImage.getHeight());
-
-      PixelMath.subtract(inputImage, filteredImage, outputImage16B);
-
-      ConvertImage.convert(outputImage16B, outputImage8B);
-
-      Utils.saveImage(outputImage8B, args[3]);
-
+      Utils.saveImage(outputImage, args[3]);
     } catch (IOException e) {
       System.err.println("Error parsing the arguments.");
       e.printStackTrace();

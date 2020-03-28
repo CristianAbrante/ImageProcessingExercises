@@ -12,7 +12,7 @@ public class StructuringElement4 extends StructuringElement {
   }
 
   @Override
-  public void map(GrayU8 image, int x, int y, StructuringElementCallback callback) {
+  public void mapNeighbours(GrayU8 image, int x, int y, StructuringElementCallback callback) {
     for (int i = 0; i < this.getWidth(); i++) {
       int computedX = i <= this.getCenterX() ? x - (this.getCenterX() - i) : x + (i - this.getCenterX());
       if (this.testIfPositionIsCorrect(image, computedX, y)) {

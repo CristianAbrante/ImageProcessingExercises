@@ -30,7 +30,7 @@ public class Filter {
 
   private static ArrayList<Integer> computeNeighbours(GrayU8 image, int x, int y, StructuringElement element) {
     ArrayList<Integer> neighbours = new ArrayList<>();
-    element.map(image, x, y, (x1, y1) ->
+    element.mapNeighbours(image, x, y, (x1, y1) ->
             neighbours.add(image.get(x1, y1)));
     return neighbours;
   }

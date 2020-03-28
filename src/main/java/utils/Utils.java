@@ -3,7 +3,9 @@ package utils;
 import boofcv.io.image.UtilImageIO;
 import boofcv.struct.image.GrayU8;
 
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 
 public class Utils {
@@ -21,6 +23,11 @@ public class Utils {
 
   public static void saveImage(GrayU8 image, String path) throws IOException {
     UtilImageIO.savePGM(image, path);
+  }
+
+  public static void saveImage(BufferedImage image, String path) throws IOException {
+    File outputFile = new File(path);
+    ImageIO.write(image, "jpg", outputFile);
   }
 
   public static boolean areEqual(GrayU8 firstImage, GrayU8 secondImage) {

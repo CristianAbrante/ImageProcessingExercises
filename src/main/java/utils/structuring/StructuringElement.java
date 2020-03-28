@@ -1,6 +1,9 @@
 package utils.structuring;
 
 import boofcv.struct.image.GrayU8;
+import utils.segmentation.Position;
+
+import java.util.ArrayList;
 
 abstract public class StructuringElement {
   int width;
@@ -58,7 +61,19 @@ abstract public class StructuringElement {
     this.height = height;
   }
 
-  public abstract void map(GrayU8 image, int x, int y, StructuringElementCallback callback);
+  public ArrayList<Integer> getNeighboursValues(GrayU8 image, int x, int y) {
+    ArrayList<Integer> neighbourValues = new ArrayList<>();
+    this.mapNeighbours(image, x, y, (x1, y1) -> neighbourValues.add(image.get(x1, y1)));
+    return neighbourValues;
+  }
+
+  public ArrayList<Position> getNeighboursPositions(GrayU8 image, int x, int y) {
+    ArrayList<Position> neighbourValues = new ArrayList<>();
+    this.mapNeighbours(image, x, y, (x1, y1) -> neighbourValues.add(new Position(x1, y1)));
+    return neighbourValues;
+  }
+
+  public abstract void mapNeighbours(GrayU8 image, int x, int y, StructuringElementCallback callback);
 
   protected boolean testIfPositionIsCorrect(GrayU8 image, int x, int y) {
     return x >= 0 && x < image.getWidth() && y >= 0 && y < image.getHeight();
