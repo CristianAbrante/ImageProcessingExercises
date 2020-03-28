@@ -1,6 +1,8 @@
 package utils;
 
 import boofcv.struct.image.GrayU8;
+import utils.structuring.StructuringElement;
+import utils.structuring.StructuringElement8;
 
 import java.util.ArrayList;
 
@@ -18,7 +20,7 @@ public class Filter {
   }
 
   public static GrayU8 applyFilterUsingElementSize(GrayU8 image, int size, FilterOperation operation) {
-    StructuringElement element = new StructuringElement(1);
+    StructuringElement element = new StructuringElement8(1);
     GrayU8 outputImage = image;
     for (int i = 0; i < size; i++) {
       outputImage = applyFilter(outputImage, element, operation);
@@ -28,20 +30,8 @@ public class Filter {
 
   private static ArrayList<Integer> computeNeighbours(GrayU8 image, int x, int y, StructuringElement element) {
     ArrayList<Integer> neighbours = new ArrayList<>();
-
-    int elementCenterX = element.getCenterX();
-    int elementCenterY = element.getCenterY();
-
-    for (int i = 0; i < element.getWidth(); i++) {
-      for (int j = 0; j < element.getHeight(); j++) {
-        int computedX = i <= elementCenterX ? x - (elementCenterX - i) : x + (i - elementCenterX);
-        int computedY = j <= elementCenterY ? y - (elementCenterY - j) : y + (j - elementCenterY);
-
-        if (computedX >= 0 && computedX < image.getWidth() && computedY >= 0 && computedY < image.getHeight()) {
-          neighbours.add(image.get(computedX, computedY));
-        }
-      }
-    }
+    element.map(image, x, y, (x1, y1) ->
+            neighbours.add(image.get(x1, y1)));
     return neighbours;
   }
 }

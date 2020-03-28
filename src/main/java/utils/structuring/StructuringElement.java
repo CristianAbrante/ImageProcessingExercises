@@ -1,6 +1,8 @@
-package utils;
+package utils.structuring;
 
-public class StructuringElement {
+import boofcv.struct.image.GrayU8;
+
+abstract public class StructuringElement {
   int width;
   int height;
 
@@ -54,6 +56,12 @@ public class StructuringElement {
       throw new IllegalArgumentException("Error: height must be greater than zero.");
     }
     this.height = height;
+  }
+
+  public abstract void map(GrayU8 image, int x, int y, StructuringElementCallback callback);
+
+  protected boolean testIfPositionIsCorrect(GrayU8 image, int x, int y) {
+    return x >= 0 && x < image.getWidth() && y >= 0 && y < image.getHeight();
   }
 
   private boolean measureIsEven(int measure) {

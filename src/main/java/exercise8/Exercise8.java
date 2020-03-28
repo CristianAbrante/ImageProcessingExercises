@@ -3,8 +3,9 @@ package exercise8;
 import boofcv.struct.image.GrayU8;
 import utils.MorphologicalOperation;
 import utils.MorphologicalOperator;
-import utils.StructuringElement;
 import utils.Utils;
+import utils.structuring.StructuringElement;
+import utils.structuring.StructuringElement8;
 
 import java.io.IOException;
 
@@ -16,7 +17,7 @@ public class Exercise8 {
     }
     try {
       GrayU8 inputImage = Utils.readPGMImage(args[0]);
-      StructuringElement element = new StructuringElement(3, 3);
+      StructuringElement element = new StructuringElement8(3, 3);
 
       // Apply first filter.
       GrayU8 firstFilterImage = MorphologicalOperator.applyOperation(inputImage, MorphologicalOperation.OPENING, element);

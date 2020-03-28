@@ -3,8 +3,9 @@ package exercise6;
 import boofcv.struct.image.GrayU8;
 import utils.MorphologicalOperation;
 import utils.MorphologicalOperator;
-import utils.StructuringElement;
 import utils.Utils;
+import utils.structuring.StructuringElement;
+import utils.structuring.StructuringElement8;
 
 import java.io.IOException;
 
@@ -17,7 +18,7 @@ public class Exercise6 {
     try {
       MorphologicalOperation operation = MorphologicalOperation.of(args[0]);
       int size = Integer.parseInt(args[1]);
-      StructuringElement element = new StructuringElement(size);
+      StructuringElement element = new StructuringElement8(size);
 
       GrayU8 inputImage = Utils.readPGMImage(args[2]);
       GrayU8 resultImage = MorphologicalOperator.applyOperation(inputImage, operation, element);

@@ -1,6 +1,7 @@
 package utils;
 
 import boofcv.struct.image.GrayU8;
+import utils.structuring.StructuringElement;
 
 public enum MorphologicalOperation {
   OPENING,
