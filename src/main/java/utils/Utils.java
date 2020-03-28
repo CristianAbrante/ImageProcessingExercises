@@ -8,6 +8,10 @@ import java.io.IOException;
 
 public class Utils {
 
+  public static GrayU8 readImage(String path) throws IOException {
+    return UtilImageIO.loadImage(path, GrayU8.class);
+  }
+
   public static GrayU8 readPGMImage(String path) throws IOException {
     BufferedImage img = UtilImageIO.loadImage(path);
     GrayU8 grayImage = new GrayU8(img.getWidth(), img.getHeight());

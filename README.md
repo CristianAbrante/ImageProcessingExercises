@@ -10,9 +10,10 @@
 Exercises for the subject **Image processing, analysis and classification** of the EIT Digital 
 Data Science Master at UPM (Technical University of Madrid).
 
-Exercises have two parts:
+Exercises have three parts:
 
 * Exercises 0X: From exercise 2 to 9.
+* Segmentation exercises.
 * Exercises 1X: *Work in progress*.
 
 ### Prerequisites
@@ -46,6 +47,8 @@ The project is divided in the following folders:
 In this section is explained how to execute each exercise:
 
 > **NOTE**: For executing the exercise is supposed to be located in the parent directory of the project.
+
+#### Exercises 0X
 
 * Exercise 2a
 
@@ -144,6 +147,21 @@ assignment/exercise-2/exercise_08_filter.sh exercise_08_input_01.pgm
 * Exercise 9
 
 Check `exercise_09.pdf` file.
+
+#### Segmentation exercises
+
+* Exercise 1a
+
+```
+assignment/segmentation/segmentation_1a.sh operation size input.png output.png
+```
+
+The arguments means:
+
+   * `operation`: the type of operation could be erosion or dilation.
+   * `size`: size of the structuring element used for operation.
+   * `input.png`: input path for the image used.
+   * `output.pgm`: output path for the image.
 
 ### Author
 

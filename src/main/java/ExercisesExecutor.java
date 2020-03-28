@@ -5,6 +5,7 @@ import exercise3.Exercise3;
 import exercise4.Exercise4;
 import exercise6.Exercise6;
 import exercise8.Exercise8;
+import segmentation.Segmentation1A;
 
 interface ExerciseCallback {
   void executeExercise(String[] args);
@@ -17,7 +18,8 @@ enum Exercise {
   EX3(Exercise3::main),
   EX4(Exercise4::main),
   EX6(Exercise6::main),
-  EX8(Exercise8::main);
+  EX8(Exercise8::main),
+  EXS1(Segmentation1A::main);
 
   ExerciseCallback callback;
 
