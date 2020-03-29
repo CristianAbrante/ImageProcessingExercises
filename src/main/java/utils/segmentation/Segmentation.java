@@ -25,10 +25,11 @@ public class Segmentation {
             region.addPosition(currentPosition);
 
             element.mapNeighbours(image, currentPosition.getX(), currentPosition.getY(), (x1, y1) -> {
-              if (positionIsRegion(image, x1, y1) && !queue.isInQueue(x1, y1)) {
-                if (!(x1 == currentPosition.getX() && y1 == currentPosition.getY())) {
-                  queue.push(x1, y1);
-                }
+              if (!(x1 == currentPosition.getX() && y1 == currentPosition.getY())
+                      && positionIsRegion(image, x1, y1)
+                      && !queue.isInQueue(x1, y1)
+                      && !region.isInRegion(x1, y1)) {
+                queue.push(x1, y1);
               }
             });
           }

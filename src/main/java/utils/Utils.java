@@ -27,7 +27,7 @@ public class Utils {
 
   public static void saveImage(BufferedImage image, String path) throws IOException {
     File outputFile = new File(path);
-    ImageIO.write(image, "jpg", outputFile);
+    ImageIO.write(image, "png", outputFile);
   }
 
   public static boolean areEqual(GrayU8 firstImage, GrayU8 secondImage) {

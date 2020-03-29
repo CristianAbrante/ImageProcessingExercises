@@ -35,4 +35,17 @@ public class Region {
   public Color getColor() {
     return this.color;
   }
+
+  public boolean isInRegion(int x, int y) {
+    return this.isInRegion(new Position(x, y));
+  }
+
+  public boolean isInRegion(Position position) {
+    for (Position position1 : this.positions) {
+      if (position1.equals(position)) {
+        return true;
+      }
+    }
+    return false;
+  }
 }
