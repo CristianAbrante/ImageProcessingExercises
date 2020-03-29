@@ -175,6 +175,14 @@ The arguments means:
   * `size`: size of the structuring element used for operation.
   * `input.png`: input path for the image used.
   * `output.pgm`: output path for the image.
+  
+##### Exercise 2b
+
+```
+assignment/segmentation/segmentation_2b.sh
+```
+
+Used images are: `test-images/segmentation/coffee_grains.jpg` and `test-images/segmentation/coffee_markers.png` 
 
 ### Author
 

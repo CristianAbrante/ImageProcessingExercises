@@ -1,5 +1,6 @@
 package utils;
 
+import boofcv.alg.filter.binary.ThresholdImageOps;
 import boofcv.io.image.UtilImageIO;
 import boofcv.struct.image.GrayU8;
 
@@ -9,6 +10,13 @@ import java.io.File;
 import java.io.IOException;
 
 public class Utils {
+
+  public static GrayU8 readBinaryImage(String path) throws IOException {
+    GrayU8 grayImage = Utils.readImage(path);
+    GrayU8 binary = new GrayU8(grayImage.getWidth(), grayImage.getHeight());
+    ThresholdImageOps.threshold(grayImage, binary, 100, true);
+    return binary;
+  }
 
   public static GrayU8 readImage(String path) throws IOException {
     return UtilImageIO.loadImage(path, GrayU8.class);
