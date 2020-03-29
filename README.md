@@ -150,7 +150,7 @@ Check `exercise_09.pdf` file.
 
 #### Segmentation exercises
 
-* Exercise 1a
+##### Exercise 1a
 
 ```
 assignment/segmentation/segmentation_1a.sh operation size input.png output.png
@@ -163,7 +163,7 @@ The arguments means:
    * `input.png`: input path for the image used.
    * `output.pgm`: output path for the image.
    
-* Exercise 1b
+##### Exercise 1b
    
 ```
 assignment/segmentation/segmentation_1b.sh connectivity size input.png output.png
