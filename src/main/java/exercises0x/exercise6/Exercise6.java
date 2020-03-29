@@ -1,4 +1,4 @@
-package exercise6;
+package exercises0x.exercise6;
 
 import boofcv.struct.image.GrayU8;
 import utils.MorphologicalOperation;

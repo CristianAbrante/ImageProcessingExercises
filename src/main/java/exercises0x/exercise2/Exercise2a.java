@@ -1,4 +1,4 @@
-package exercise2;
+package exercises0x.exercise2;
 
 import boofcv.struct.image.GrayU8;
 import utils.Utils;

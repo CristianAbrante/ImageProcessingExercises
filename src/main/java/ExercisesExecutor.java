@@ -1,10 +1,10 @@
-import exercise2.Exercise2a;
-import exercise2.Exercise2b;
-import exercise2.Exercise2d;
-import exercise3.Exercise3;
-import exercise4.Exercise4;
-import exercise6.Exercise6;
-import exercise8.Exercise8;
+import exercises0x.exercise2.Exercise2a;
+import exercises0x.exercise2.Exercise2b;
+import exercises0x.exercise2.Exercise2d;
+import exercises0x.exercise3.Exercise3;
+import exercises0x.exercise4.Exercise4;
+import exercises0x.exercise6.Exercise6;
+import exercises0x.exercise8.Exercise8;
 import segmentation.Segmentation1A;
 import segmentation.Segmentation1B;
 

@@ -1,4 +1,4 @@
-package exercise3;
+package exercises0x.exercise3;
 
 import boofcv.struct.image.GrayU8;
 import utils.Filter;
