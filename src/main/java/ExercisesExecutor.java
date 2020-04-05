@@ -6,6 +6,7 @@ import exercises0x.exercise4.Exercise4;
 import exercises0x.exercise6.Exercise6;
 import exercises0x.exercise8.Exercise8;
 import exercises1x.Exercise11;
+import exercises1x.Exercise13;
 import segmentation.Segmentation1A;
 import segmentation.Segmentation1B;
 import segmentation.Segmentation2A;
@@ -27,7 +28,8 @@ enum Exercise {
   EXS1B(Segmentation1B::main),
   EXS2A(Segmentation2A::main),
   EXS2B(Segmentation2B::main),
-  EX11(Exercise11::main);
+  EX11(Exercise11::main),
+  EX13(Exercise13::main);
 
   ExerciseCallback callback;
 
