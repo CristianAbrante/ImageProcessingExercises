@@ -14,7 +14,7 @@ Exercises have three parts:
 
 * Exercises 0X: From exercise 2 to 9.
 * Segmentation exercises.
-* Exercises 1X: *Work in progress*.
+* Exercises 1X: Exercise 11 and 13.
 
 ### Prerequisites
 
@@ -183,6 +183,14 @@ assignment/segmentation/segmentation_2b.sh
 ```
 
 Used images are: `test-images/segmentation/coffee_grains.jpg` and `test-images/segmentation/coffee_markers.png` 
+
+#### Exercises 1X
+
+* Exercise 11
+
+```
+assignment/exercises-1x/exercise_11a_flatzone.sh exercise_11a_input_01.txt exercise_11a_input_01.pgm exercise_11a_output_01.pgm
+```
 
 ### Author
 
