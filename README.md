@@ -192,6 +192,18 @@ Used images are: `test-images/segmentation/coffee_grains.jpg` and `test-images/s
 assignment/exercises-1x/exercise_11a_flatzone.sh exercise_11a_input_01.txt exercise_11a_input_01.pgm exercise_11a_output_01.pgm
 ```
 
+* Exercise 13a
+
+```
+assignment/exercises-1x/exercise_13a_minimum.sh exercise_13a_input_01.txt exercise_11a_input_01.pgm exercise_13a_output_01.txt
+```
+
+* Exercise 13b
+
+```
+assignment/exercises-1x/exercise_13b_maximum.sh exercise_13b_input_01.txt exercise_13b_input_01.pgm exercise_13b_output_01.txt
+```
+
 ### Author
 
 - **Cristian M. Abrante Dorta** - [CristianAbrante](https://github.com/CristianAbrante)

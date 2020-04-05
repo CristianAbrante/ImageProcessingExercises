@@ -12,6 +12,14 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Exercise11 {
+  /**
+   * Exercises that computes the flat zone of a given pixel.
+   * <p>
+   * Parameters are:
+   * config.txt -> configuration file with the initial pixel.
+   * input.pgm -> input image.
+   * output.pgm -> output image with the flat zone.
+   */
   public static void main(String[] args) {
     try {
       if (args.length != 3) {
