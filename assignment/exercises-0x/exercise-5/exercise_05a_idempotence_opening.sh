@@ -12,6 +12,6 @@ if [ ! -d "$EXERCISE_DIR" ]; then
   mkdir $EXERCISE_DIR
 fi
 
-assignment/exercise-4/exercise_04a_opening.sh "$@" "$EXERCISE_OUT-01.pgm"
-assignment/exercise-4/exercise_04a_opening.sh "$1" "$EXERCISE_OUT-01.pgm" "$EXERCISE_OUT-02.pgm"
-assignment/exercise-2/exercise_02b_compare.sh "$EXERCISE_OUT-01.pgm" "$EXERCISE_OUT-02.pgm" "$EXERCISE_DIR/exercise_02b_output_01.txt"
+assignment/exercises-0x/exercise-4/exercise_04a_opening.sh "$@" "$EXERCISE_OUT-01.pgm"
+assignment/exercises-0x/exercise-4/exercise_04a_opening.sh "$1" "$EXERCISE_OUT-01.pgm" "$EXERCISE_OUT-02.pgm"
+assignment/exercises-0x/exercise-2/exercise_02b_compare.sh "$EXERCISE_OUT-01.pgm" "$EXERCISE_OUT-02.pgm" "$EXERCISE_DIR/exercise_02b_output_01.txt"
