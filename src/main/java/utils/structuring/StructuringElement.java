@@ -73,6 +73,10 @@ abstract public class StructuringElement {
     return neighbourValues;
   }
 
+  public void mapNeighbours(GrayU8 image, Position position, StructuringElementCallback callback) {
+    this.mapNeighbours(image, position.getX(), position.getY(), callback);
+  }
+
   public abstract void mapNeighbours(GrayU8 image, int x, int y, StructuringElementCallback callback);
 
   protected boolean testIfPositionIsCorrect(GrayU8 image, int x, int y) {

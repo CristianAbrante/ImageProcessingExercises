@@ -66,6 +66,14 @@ public class Path implements Iterable<Position> {
     return false;
   }
 
+  public int size() {
+    return this.path.size();
+  }
+
+  public Position get(int index) {
+    return this.path.get(index);
+  }
+
   public boolean havePosition(int x, int y) {
     return this.havePosition(new Position(x, y));
   }
