@@ -27,6 +27,10 @@ public enum Direction {
     return this.xDifference == currentXDifference && this.yDifference == currentYDifference;
   }
 
+  public Position followDirection(Position currentPosition) {
+    return new Position(currentPosition.getX() + this.xDifference, currentPosition.getY() + this.yDifference);
+  }
+
   public static Direction computeDirection(int pixelX, int pixelY, int neighbourX, int neighbourY) {
     return Direction.computeDirection(new Position(pixelX, pixelY), new Position(neighbourX, neighbourY));
   }

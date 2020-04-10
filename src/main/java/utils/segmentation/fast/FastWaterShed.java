@@ -17,7 +17,7 @@ public class FastWaterShed {
   DirectionMatrix directionMatrix;
 
 
-  public void compute(GrayU8 image) {
+  public List<WaterShed> compute(GrayU8 image) {
     this.directionMatrix = new DirectionMatrix(image);
     localMinimums = new ArrayList<>();
     StructuringElement element = new StructuringElement8(1);
@@ -28,7 +28,7 @@ public class FastWaterShed {
       }
     }
 
-    System.out.println("end");
+    System.out.println("Direction matrix: > ");
     for (int i = 0; i < image.getWidth(); i++) {
       for (int j = 0; j < image.getHeight(); j++) {
         System.out.print(this.directionMatrix.getDirection(j, i));
@@ -36,6 +36,8 @@ public class FastWaterShed {
       }
       System.out.println();
     }
+
+    return WaterShed.constructWaterSheds(image, this.directionMatrix, this.localMinimums);
   }
 
 
