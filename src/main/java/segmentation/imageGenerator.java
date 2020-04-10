@@ -34,6 +34,6 @@ public class imageGenerator {
       System.out.println();
     }
 
-    Utils.saveImage(image, "out/test.pgm");
+    Utils.saveImage(image, "out/segmentation-test.pgm");
   }
 }

@@ -184,6 +184,23 @@ assignment/segmentation/segmentation_2b.sh
 
 Used images are: `test-images/segmentation/coffee_grains.jpg` and `test-images/segmentation/coffee_markers.png` 
 
+##### Exercise 3a
+
+Implementation of the watershed algorithm could be found on location `src/main/java/utils/segmentation/fast/FastWaterShed.java`
+
+If you want to execute the example could be done in:
+
+```
+assignment/segmentation/segmentation_3a_example.sh
+```
+
+Also the pseudocode report could be found in
+
+```
+assignment/segmentation/segmentation_3a_pseudocode.pdf
+```
+ 
+
 #### Exercises 1X
 
 * Exercise 11
