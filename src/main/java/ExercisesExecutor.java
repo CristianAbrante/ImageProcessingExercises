@@ -7,10 +7,7 @@ import exercises0x.exercise6.Exercise6;
 import exercises0x.exercise8.Exercise8;
 import exercises1x.Exercise11;
 import exercises1x.Exercise13;
-import segmentation.Segmentation1A;
-import segmentation.Segmentation1B;
-import segmentation.Segmentation2A;
-import segmentation.Segmentation2B;
+import segmentation.*;
 
 interface ExerciseCallback {
   void executeExercise(String[] args);
@@ -28,6 +25,7 @@ enum Exercise {
   EXS1B(Segmentation1B::main),
   EXS2A(Segmentation2A::main),
   EXS2B(Segmentation2B::main),
+  EXS3A(Segmentation3A::main),
   EX11(Exercise11::main),
   EX13(Exercise13::main);
 
