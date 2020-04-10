@@ -1,0 +1,117 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{graphicx}
+\usepackage{float}
+
+
+\title{Segmentation 3 (Water shed algorithm)}
+\author{Cristian Manuel Abrante Dorta}
+\date{April 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Pseudo code}
+
+In this section we are going to present the pseudo code of the implementation of the algorithm based on \cite{watershed}.First, we are going to present the procedure for arrowing the pixels of the image: \\
+
+\begin{algorithm}[H]
+ \KwData{and input image $I$}
+ \KwResult{A list of pixels sets $W = <P_1, \dots, P_n>$\;}
+ \emph{D is a matrix of directions initialized to Null.}\\
+ localMinimums = []
+ 
+ \For{$p \in I$}{
+    \If{$D(p) \neq Null$}{
+        \tcp{Auxiliary method for finding best neighbour (less gray level).}\label{cmt}
+        bestNeighbour = findBestNeighbour(I, p)
+        
+        \If{bestNeighbour = Null}{
+            \tcp{In this case best neighbour is not found so we have regional minimum.}\label{cmt}
+            localMinimum := p\\
+            $D(p) = CENTER$
+        }
+        \If{$I(bestNeighbour) = I(p)$}{
+            \tcp{In this case we should explore the plateau.}\label{cmt}
+            explorePlateau(p, D)
+        }
+        \If{$I(bestNeighbour) < I (p)$}{
+            \tcp{Normal pixel, we have to calculate direction.}\label{cmt}
+            direction = computeDirection(p, bestNeighbour);\\
+            D(p) = direction.
+        }
+    }
+ }
+ \tcp{Finally the watersheds have to be constructed from the directions.}\label{cmt}
+ W = constructWatersheds(I, D);
+ \caption{Arrowing method}
+\end{algorithm}
+
+\vspace{}
+
+After that, we are going to explain the procedure of the exploration of the plateau which is the novel method of this algorithm. \\
+
+\begin{algorithm}[H]
+ \KwData{and input image $I$ and an initial pixel $p$}
+ \emph{$Q$ is a queue}\\
+ \emph{$P$ is the plateau}\\
+ \emph{$bestNeighbour$ is the best neighbour of the plateau}\\
+ 
+ Q.add(p)\\
+ p := p
+
+ \While{Q.empty() $\neq$ false}{
+   currentP = Q.pop()\\
+   \tcp{Auxiliary method for finding neighbours.}\label{cmt}
+   \For{$q \in Neighbours(I, currentP)$}{
+     \If{$q$ is not visited}{
+        mark $q$ as visited\\
+        \If{$I(q) < I(p) \wedge I(q) < I(bestNeighbour)$}{
+            \tcp{Best neighbour found}\label{cmt}
+            bestNeighbour = q
+        }
+        \If{$I(q) = I(p)$}{
+            Q.push(q)\\
+            P := q
+        }
+     }
+   }
+ }
+ 
+ \eIf{$bestNeighbour \neq Null$}{
+    \emph{plateau is not minimal}\\
+ }{
+    \emph{plateau is minimal}\\
+ }
+
+ \caption{Plateau exploration method}
+\end{algorithm}
+
+\section{Example}
+
+For testing if the implementation of the algorithm is correct (implementation can be found in the source code), I built an squared image of 10 x 10 pixels, and we can see here the result after applying the segmentation algorithm:
+
+\begin{figure}[!h]
+\minipage{0.5\textwidth}
+    \centering
+  \includegraphics[scale=5]{report/segmentation/image/test.png}
+  \caption{Original image}\label{fig:image-1}
+\endminipage\hfill
+\minipage{0.5\textwidth}
+    \centering
+  \includegraphics[scale=5]{report/segmentation/image/test-out.png}
+  \caption{Watershed regions obtained}\label{fig:awesome_image2}
+\endminipage\hfill
+\end{figure}
+
+\begin{thebibliography}{9}
+\bibitem{watershed}
+   Suphalakshmi, A and Anandhakumar, P
+    \newblock {\em An improved fast watershed algorithm based on finding the shortest paths with breadth first search}, 2012.
+
+\end{thebibliography}
+
+\end{document}
