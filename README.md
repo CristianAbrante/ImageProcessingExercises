@@ -22,6 +22,7 @@ For running the exercises the prerequisites are:
 
 * `Java` version `1.8`.
 * `Maven`, if not installed visit [install Maven](https://maven.apache.org/install.html).
+* `opencv version 4.3.0`, if not installed for java visit [this guide](https://opencv-java-tutorials.readthedocs.io/en/latest/01-installing-opencv-for-java.html) 
 
 ### Installation
 
@@ -32,6 +33,9 @@ you have to follow this steps:
 mvn package
 chmod +x assignment/**/*.sh
 ```
+
+If you want to execute **Segmentation exercise 2B (Wheel teeth count)**, you have to set the variable 
+`OPENCV_PATH` in the script `assignment/utils.sh`.  
 
 ### Project structure
 
@@ -175,6 +179,12 @@ The arguments means:
   * `size`: size of the structuring element used for operation.
   * `input.png`: input path for the image used.
   * `output.pgm`: output path for the image.
+
+##### Exercise 2a
+
+```
+assignment/segmentation/segmentation_2a.sh
+```
   
 ##### Exercise 2b
 
