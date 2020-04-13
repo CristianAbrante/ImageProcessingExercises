@@ -9,9 +9,12 @@
   <a href="#Description">Description</a> •
   <a href="#Prerequisites">Prerequisites</a> •
   <a href="#Installation">Installation</a> •
+  <a href="#Exercises 0X">Exercises 0X</a> •
+  <a href="#Segmentation">Segmentation</a> •
+  <a href="#Exercises 1X">Exercises 1X</a>
 </p>
 
-###Description 
+### Description 
 
 Exercises for the subject **Image processing, analysis and classification** of the EIT Digital 
 Data Science Master at UPM (Technical University of Madrid).
