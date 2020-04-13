@@ -223,7 +223,18 @@ Used images are: `test-images/segmentation/coffee_grains.jpg` and `test-images/s
 
 Implementation of the watershed algorithm could be found on location `src/main/java/utils/segmentation/fast/FastWaterShed.java`
 
-If you want to execute the example could be done in:
+The program could be executed with:
+
+```
+assignment/segmentation/segmentation_3a.sh input.pgm output.png
+```
+
+Where the arguments stand for:
+
+  * `input.pgm`: input image where regions are going to be extracted from.
+  * `output.png`: output image where regions are going to be stored in different colors.
+
+An example of the execution is already in the following script:
 
 ```
 assignment/segmentation/segmentation_3a_example.sh
