@@ -5,7 +5,13 @@
   <img alt="UPM" src="https://img.shields.io/badge/EIT%20Digital-UPM-blue?style=flat-square">
 </p>
 
-### Description 
+<p align="center">
+  <a href="#Description">Description</a> •
+  <a href="#Prerequisites">Prerequisites</a> •
+  <a href="#Installation">Installation</a> •
+</p>
+
+###Description 
 
 Exercises for the subject **Image processing, analysis and classification** of the EIT Digital 
 Data Science Master at UPM (Technical University of Madrid).
@@ -22,7 +28,7 @@ For running the exercises the prerequisites are:
 
 * `Java` version `1.8`.
 * `Maven`, if not installed visit [install Maven](https://maven.apache.org/install.html).
-* `opencv version 4.3.0`, if not installed for java visit [this guide](https://opencv-java-tutorials.readthedocs.io/en/latest/01-installing-opencv-for-java.html) 
+* `opencv version 4.3.0`, if not installed for java visit [this guide](https://opencv-java-tutorials.readthedocs.io/en/latest/01-installing-opencv-for-java.html) (Only needed for exercise segmentation 2b, wheel teeth count) 
 
 ### Installation
 
