@@ -166,7 +166,13 @@ The arguments means:
    * `size`: size of the structuring element used for operation.
    * `input.png`: input path for the image used.
    * `output.pgm`: output path for the image.
-   
+
+As example:
+
+```
+assignment/segmentation/segmentation_1a.sh erosion 1 test-images/segmentation/hitchcock.png out/hitchcock.pgm
+```
+
 ##### Exercise 1b
    
 ```
@@ -180,13 +186,32 @@ The arguments means:
   * `input.png`: input path for the image used.
   * `output.pgm`: output path for the image.
 
+As example:
+
+```
+assignment/segmentation/segmentation_1b.sh 4 1 test-images/segmentation/particles.png out/particles.pgm
+```
+
 ##### Exercise 2a
+
+This program does not have arguments, the output is the number of counted wheel tooth:
 
 ```
 assignment/segmentation/segmentation_2a.sh
 ```
+
+Expected output:
+
+```
+Number of teeth > 102
+```
+
+**Note**: For this exercise the path of the opencv installation should
+be set in the `assignment/utils.sh` file. 
   
 ##### Exercise 2b
+
+This exercise does not expect any argument:
 
 ```
 assignment/segmentation/segmentation_2b.sh

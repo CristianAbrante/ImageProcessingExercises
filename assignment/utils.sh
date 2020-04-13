@@ -1,6 +1,6 @@
 # !/bin/bash
 
-OPENCV_PATH=pepe
+OPENCV_PATH=/usr/local/Cellar/opencv/4.3.0/share/java/opencv4/
 JAR_FILE=target/ImageProcessingExercises0x.jar
 
 if

@@ -1,3 +1,3 @@
 # !/bin/bash
 
-assignment/utils.sh exs2b "$@"
+assignment/utils.sh exs1b "$@"
