@@ -226,7 +226,8 @@ This exercise does not expect any argument:
 assignment/segmentation/segmentation_2b.sh
 ```
 
-Used images are: `test-images/segmentation/coffee_grains.jpg` and `test-images/segmentation/coffee_markers.png` 
+The used image is: `test-images/segmentation/coffee_grains.jpg` and it 
+will store the generated markers in folder: `out/markers.pgm` 
 
 ##### Exercise 3a
 
