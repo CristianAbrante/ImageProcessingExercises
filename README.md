@@ -244,7 +244,7 @@ Where the arguments stand for:
   * `input.pgm`: input image where regions are going to be extracted from.
   * `output.png`: output image where regions are going to be stored in different colors.
 
-An example of the execution is already in the following script:
+An example of the execution with small image `test-image/segmentation-test.pgm` is already in the following script:
 
 ```
 assignment/segmentation/segmentation_3a_example.sh
